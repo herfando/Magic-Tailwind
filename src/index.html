@@ -6,9 +6,48 @@
   <link rel="stylesheet" href="../dist/magic-tailwind.css">
 </head>
 <body class="p-8">
+
   <h1 class="text-2xl font-bold mb-4">Magic Tailwind Components</h1>
 
+  <!-- Buttons -->
   <button class="btn">Primary Button</button>
-  <!-- Tambahkan elemen lainnya di sini -->
+  <button class="btn-secondary">Secondary Button</button>
+  <button class="btn-danger">Danger Button</button>
+
+  <!-- Cards -->
+  <div class="card mt-6">
+    <div class="card-title">Card Title</div>
+    <div class="card-body">
+      This is a sample card body.
+    </div>
+  </div>
+
+  <!-- Form Input -->
+  <input type="text" placeholder="Your name" class="input mt-4">
+
+  <!-- Alerts -->
+  <div class="alert alert-success mt-4">Success alert!</div>
+  <div class="alert alert-error mt-2">Error alert!</div>
+
+  <!-- Modal -->
+  <div class="modal" id="sampleModal">
+    <div class="modal-content">
+      <h2 class="text-xl font-bold mb-2">Modal Title</h2>
+      <p>This is a modal content.</p>
+      <button class="btn mt-4" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <button class="btn mt-4" onclick="openModal()">Open Modal</button>
+
+  <script>
+    function openModal() {
+      document.getElementById('sampleModal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('sampleModal').classList.add('hidden');
+    }
+  </script>
+
 </body>
 </html>
