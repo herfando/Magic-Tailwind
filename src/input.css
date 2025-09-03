@@ -17,5 +17,8 @@
   .card-title {
     @apply font-bold text-lg mb-2;
   }
+   .card-body {
+    @apply text-gray-700;
+  }
 
 }
