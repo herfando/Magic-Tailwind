@@ -2,50 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Magic Tailwind Test</title>
+  <title>Magic Tailwind Full Demo</title>
   <link rel="stylesheet" href="../dist/magic-tailwind.css">
 </head>
-<body class="p-8">
+<body class="p-8 bg-gray-50 font-sans">
 
-  <h1 class="text-2xl font-bold mb-4">Magic Tailwind Components</h1>
+  <h1 class="text-3xl font-bold mb-6">Magic Tailwind Full Components</h1>
 
   <!-- Buttons -->
-  <button class="btn">Primary Button</button>
-  <button class="btn-secondary">Secondary Button</button>
-  <button class="btn-danger">Danger Button</button>
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Buttons</h2>
+    <button class="btn-primary">Primary</button>
+    <button class="btn-secondary">Secondary</button>
+    <button class="btn-danger">Danger</button>
+  </section>
 
   <!-- Cards -->
-  <div class="card mt-6">
-    <div class="card-title">Card Title</div>
-    <div class="card-body">
-      This is a sample card body.
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Cards</h2>
+    <div class="card">
+      <div class="card-title">Card Title</div>
+      <div class="card-body">
+        This is a card component with some example content. Fully responsive and reusable.
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Form Input -->
-  <input type="text" placeholder="Your name" class="input mt-4">
+  <!-- Form -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Form Inputs</h2>
+    <input type="text" placeholder="Name" class="input mb-2">
+    <input type="email" placeholder="Email" class="input mb-2">
+    <textarea placeholder="Message" class="input h-24"></textarea>
+  </section>
 
   <!-- Alerts -->
-  <div class="alert alert-success mt-4">Success alert!</div>
-  <div class="alert alert-error mt-2">Error alert!</div>
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Alerts</h2>
+    <div class="alert alert-success">Success! Operation completed.</div>
+    <div class="alert alert-error">Error! Something went wrong.</div>
+  </section>
+
+  <!-- Badge -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Badges</h2>
+    <span class="badge">New</span>
+    <span class="badge">Hot</span>
+  </section>
+
+  <!-- Tooltip -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Tooltip</h2>
+    <div class="tooltip">
+      Hover me
+      <span>Tooltip text</span>
+    </div>
+  </section>
 
   <!-- Modal -->
-  <div class="modal" id="sampleModal">
-    <div class="modal-content">
-      <h2 class="text-xl font-bold mb-2">Modal Title</h2>
-      <p>This is a modal content.</p>
-      <button class="btn mt-4" onclick="closeModal()">Close</button>
-    </div>
-  </div>
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Modal</h2>
+    <button class="btn-primary" onclick="openModal()">Open Modal</button>
 
-  <button class="btn mt-4" onclick="openModal()">Open Modal</button>
+    <div class="modal" id="demoModal">
+      <div class="modal-content">
+        <h3 class="text-xl font-bold mb-2">Modal Title</h3>
+        <p>This is a modal content. You can close it by clicking the button below.</p>
+        <button class="btn-secondary mt-4" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </section>
 
   <script>
     function openModal() {
-      document.getElementById('sampleModal').classList.remove('hidden');
+      document.getElementById('demoModal').classList.remove('hidden');
     }
     function closeModal() {
-      document.getElementById('sampleModal').classList.add('hidden');
+      document.getElementById('demoModal').classList.add('hidden');
     }
   </script>
 
