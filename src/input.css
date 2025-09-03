@@ -14,5 +14,8 @@
   .card {
     @apply bg-white shadow-lg rounded-lg p-4;
   }
+  .card-title {
+    @apply font-bold text-lg mb-2;
+  }
 
 }
