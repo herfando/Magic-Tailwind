@@ -31,5 +31,9 @@
   .alert-success {
     @apply bg-green-500;
   }
+  .alert-error {
+    @apply bg-red-500;
+  }
+
 
 }
