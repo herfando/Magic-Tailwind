@@ -1,85 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
-  <title>Magic Tailwind Full Demo</title>
-  <link rel="stylesheet" href="../dist/magic-tailwind.css">
+  <title>Magic Tailwind UI 2.0</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#5A67D8',
+            secondary: '#ED64A6',
+            accent: '#38B2AC',
+            danger: '#E53E3E',
+            info: '#4299E1',
+            success: '#48BB78',
+          },
+          animation: {
+            fadeIn: 'fadeIn 0.5s ease-in-out',
+            scaleUp: 'scaleUp 0.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            },
+            scaleUp: {
+              '0%': { transform: 'scale(0.9)' },
+              '100%': { transform: 'scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="p-8 bg-gray-50 font-sans">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans p-8 transition-colors duration-500">
 
-  <h1 class="text-3xl font-bold mb-6">Magic Tailwind Full Components</h1>
+  <!-- Dark Mode Toggle -->
+  <div class="text-right mb-6">
+    <button id="toggleDark" class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <!-- Header -->
+  <header class="mb-12 text-center">
+    <h1 class="text-5xl font-extrabold mb-4">Magic Tailwind UI 2.0</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300">Modern, colorful, responsive components with animations and dark mode</p>
+  </header>
 
   <!-- Buttons -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Buttons</h2>
-    <button class="btn-primary">Primary</button>
-    <button class="btn-secondary">Secondary</button>
-    <button class="btn-danger">Danger</button>
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Buttons</h2>
+    <div class="flex gap-4 flex-wrap">
+      <button class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300 animate-scaleUp">Primary</button>
+      <button class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-pink-600 transition duration-300 animate-scaleUp">Secondary</button>
+      <button class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition duration-300 animate-scaleUp">Accent</button>
+      <button class="bg-danger text-white px-6 py-3 rounded-lg hover:bg-red-700 transition duration-300 animate-scaleUp">Danger</button>
+      <button class="bg-success text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 animate-scaleUp">Success</button>
+      <button class="bg-info text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 animate-scaleUp">Info</button>
+    </div>
   </section>
 
-  <!-- Cards -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Cards</h2>
-    <div class="card">
-      <div class="card-title">Card Title</div>
-      <div class="card-body">
-        This is a card component with some example content. Fully responsive and reusable.
+  <!-- Cards Grid -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Cards</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 hover:shadow-2xl hover:scale-105 transition duration-300 animate-fadeIn">
+        <h3 class="text-xl font-semibold mb-2">Card One</h3>
+        <p class="text-gray-600 dark:text-gray-300">Modern card with smooth hover effects, responsive and reusable.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 hover:shadow-2xl hover:scale-105 transition duration-300 animate-fadeIn">
+        <h3 class="text-xl font-semibold mb-2">Card Two</h3>
+        <p class="text-gray-600 dark:text-gray-300">Fully responsive layout using Tailwind CSS grid utilities.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 hover:shadow-2xl hover:scale-105 transition duration-300 animate-fadeIn">
+        <h3 class="text-xl font-semibold mb-2">Card Three</h3>
+        <p class="text-gray-600 dark:text-gray-300">Reusable components, easy to customize and extend for any project.</p>
       </div>
     </div>
   </section>
 
-  <!-- Form -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Form Inputs</h2>
-    <input type="text" placeholder="Name" class="input mb-2">
-    <input type="email" placeholder="Email" class="input mb-2">
-    <textarea placeholder="Message" class="input h-24"></textarea>
+  <!-- Form Inputs -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Form</h2>
+    <div class="max-w-lg mx-auto space-y-4">
+      <input type="text" placeholder="Name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:outline-none transition">
+      <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-secondary focus:outline-none transition">
+      <textarea placeholder="Message" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-accent focus:outline-none transition h-32"></textarea>
+      <button class="w-full bg-primary text-white py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Submit</button>
+    </div>
   </section>
 
   <!-- Alerts -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Alerts</h2>
-    <div class="alert alert-success">Success! Operation completed.</div>
-    <div class="alert alert-error">Error! Something went wrong.</div>
-  </section>
-
-  <!-- Badge -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Badges</h2>
-    <span class="badge">New</span>
-    <span class="badge">Hot</span>
-  </section>
-
-  <!-- Tooltip -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Tooltip</h2>
-    <div class="tooltip">
-      Hover me
-      <span>Tooltip text</span>
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Alerts</h2>
+    <div class="space-y-4 max-w-lg mx-auto">
+      <div class="bg-success text-white px-6 py-4 rounded-lg shadow animate-fadeIn">Success! Operation completed successfully.</div>
+      <div class="bg-danger text-white px-6 py-4 rounded-lg shadow animate-fadeIn">Error! Something went wrong.</div>
+      <div class="bg-info text-white px-6 py-4 rounded-lg shadow animate-fadeIn">Info! Please read this information.</div>
     </div>
   </section>
 
   <!-- Modal -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Modal</h2>
-    <button class="btn-primary" onclick="openModal()">Open Modal</button>
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Modal</h2>
+    <div class="text-center">
+      <button id="openModal" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Open Modal</button>
+    </div>
 
-    <div class="modal" id="demoModal">
-      <div class="modal-content">
-        <h3 class="text-xl font-bold mb-2">Modal Title</h3>
-        <p>This is a modal content. You can close it by clicking the button below.</p>
-        <button class="btn-secondary mt-4" onclick="closeModal()">Close</button>
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-md w-full shadow-2xl animate-scaleUp">
+        <h3 class="text-xl font-bold mb-4">Modal Title</h3>
+        <p class="mb-6">This is a modern modal with animations and dark mode support.</p>
+        <button id="closeModal" class="bg-danger text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300">Close</button>
       </div>
     </div>
   </section>
 
   <script>
-    function openModal() {
-      document.getElementById('demoModal').classList.remove('hidden');
-    }
-    function closeModal() {
-      document.getElementById('demoModal').classList.add('hidden');
-    }
+    // Dark mode toggle
+    const toggleDark = document.getElementById('toggleDark');
+    toggleDark.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // Modal toggle
+    const openBtn = document.getElementById('openModal');
+    const closeBtn = document.getElementById('closeModal');
+    const modal = document.getElementById('modal');
+
+    openBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
   </script>
 
 </body>
